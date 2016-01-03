@@ -51,3 +51,4 @@ init python:
     dinner_meet_spike = False
     
     dinner_meet_twilight_first = False
+    joke = 0 #If you told a joke to pinkie

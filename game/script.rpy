@@ -59,3 +59,8 @@ label start:
 label end:
     
     return
+    
+label to_be_co:
+    scene black with Dissolve(1.5)
+    "{b}TO BE CONTINUED{/b}"
+    jump end

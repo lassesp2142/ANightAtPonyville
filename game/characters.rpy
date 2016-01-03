@@ -70,8 +70,14 @@ init:
 
     image pinkie neutral = "images/characters/pinkie/neutral_pinkie.png"
     
+    image pinkie happy_left = "images/characters/pinkie/happy_pinkie_left.png"
+    
+    image pinkie very_happy_left = "images/characters/pinkie/pinkie_very_happy_left.png"
+    
     image pinkie smiling_left = "images/characters/pinkie/smiling_pinkie_left.png"
     image pinkie smiling_right = "images/characters/pinkie/smiling_pinkie_right.png"
+    
+    image pinkie confused = "images/characters/pinkie/surprised_pinkie.png"
 
     #Rainbow's Creation
     define rainbow = Character("Rainbow Dash", color = "#9BDBF5", show_two_window=True)

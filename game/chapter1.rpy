@@ -176,6 +176,7 @@ label meeting_the_mane_six:
             show twilight happy_right with quickdissolve
             twilight "You are a though %(player_gender)s to return inside the Pinkie's Storm so quickly! Good luck then. Don't hesitate to cut her if she doesn't stop talking. She is very talkative when she meets somepony for the first time."
             $ dinner_meet_pinkie = True
+            call pinkie_first_talk from _call_pinkie_first_talk
         
         # Rainbow's Path TODO
         "{i}I'd really like to meet Rainbow Dash.{/i}":
@@ -202,7 +203,7 @@ label meeting_the_mane_six:
             "{i}The alicorn blushed a little before making her way to the table."
             $ dinner_meet_twilight = True
             $ dinner_meet_twilight_first = True
-            call twilight_first_talk
+            call twilight_first_talk from _call_twilight_first_talk
             
         # Spike's Path TODO
         "{i}What about Spike? I've always wanted to meet a dragon!{/i}":
@@ -222,7 +223,7 @@ label meeting_the_mane_six:
             
             "{i}Let's talk with Applejack{/i}" if not dinner_meet_applejack:
                 $ dinner_meet_applejack = True
-                call applejack_first_talk
+                call applejack_first_talk from _call_applejack_first_talk_1
             
             "{i}Let's talk with Fluttershy.{/i}" if not dinner_meet_fluttershy:
                 $ dinner_meet_fluttershy = True
@@ -230,7 +231,7 @@ label meeting_the_mane_six:
                 
             "{i}Let's talk with Pinkie Pie.{/i}" if not dinner_meet_pinkie:
                 $ dinner_meet_pinkie = True
-                pass
+                call pinkie_first_talk from _call_pinkie_first_talk_1
                 
             "{i}Let's talk with Rainbow Dash.{/i}" if not dinner_meet_rainbow:
                 $ dinner_meet_rainbow = True
@@ -242,7 +243,7 @@ label meeting_the_mane_six:
                 
             "{i}Let's talk with Twilight.{/i}" if not dinner_meet_twilight:
                 $ dinner_meet_twilight = True
-                call twilight_first_talk
+                call twilight_first_talk from _call_twilight_first_talk_1
                 pass
             
             "{i}Let's talk with Spike.{/i}" if not dinner_meet_spike:
@@ -523,6 +524,51 @@ label applejack_first_talk:
                     "The farm pony quickly winked at me with a smile and left."
     return
     
+label pinkie_first_talk:
+    # Pinkies Path: WIP
+    
+    scene bg friendship_castle_dining_room with fade
+    play music pinkie_theme
+    
+    show pinkie happy_left at right_position with fade
+    pinkie "Hiya! I knew you would come visit me! Cus' they always do!"
+    menu:
+        #only one option so far
+        "{i}joke?{/i}":
+            $ affinities.twilight_friendship =+ 5
+            $ affinities.twilight_romance =+ 5
+            player "Hey wanna hear a joke?" #heh had too
+            show pinkie neutral with quickdissolve
+            pinkie "sure! Nothing like a joke from time to time!"
+            player "Two atoms walks into a bar. One of them say. I think I lost a neutron!. To which the other responds. Are you sure?. I'm positive the first explains. Get it? Positive!"
+            show pinkie very_happy_left with quickdissolve
+            pinkie "HAH!"
+            show pinkie confused with quickdissolve
+            pinkie "I don't get it"
+            show  twilight laughing_madly #not implemented
+            twilight "pffHAHAHAHA"
+            twilight "I'M POSITIVE! HAHAHA"
+            show twilight embaressed #not implemented
+            twilight "Sorry, I'm just gonnagooverthereforasecbye"
+            hide twilight with dissolve
+            show pinkie neutral with quickdissolve
+            pinkie "Giggles* Silly twilight"
+            $joke = 1
+            #jump pinkie_first_talk_part_two
+            
+        "{i}erhm placeholder?{/i}":
+            pass
+            
+    label pinkie_first_talk_part_two:
+        pinkie "Is there anything else I can help with?"
+        menu:
+            "{i}Nope, that was it.{/i}":
+                show pinkie 
+                pinkie "Okiedokieloki"
+            "{i}Placeholder{/i}":
+                return
+    
+return
     
 label twilight_first_talk:
     # TWILIGHT'S PATH

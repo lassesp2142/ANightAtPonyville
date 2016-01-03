@@ -1,0 +1,29 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/script.rpy", line 52, in script call
+    call meeting_the_mane_six from _call_meeting_the_mane_six
+  File "game/chapter1.rpy", line 234, in script call
+    call pinkie_first_talk from _call_pinkie_first_talk_1
+  File "game/chapter1.rpy", line 563, in script
+    Pinkie "Is there anything else I can help with?"
+Exception: Sayer 'Pinkie' is not defined.
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/script.rpy", line 52, in script call
+    call meeting_the_mane_six from _call_meeting_the_mane_six
+  File "game/chapter1.rpy", line 234, in script call
+    call pinkie_first_talk from _call_pinkie_first_talk_1
+  File "game/chapter1.rpy", line 563, in script
+    Pinkie "Is there anything else I can help with?"
+  File "C:\Users\John\Downloads\renpy-6.99.8-sdk\renpy\ast.py", line 583, in execute
+    who = eval_who(self.who, self.who_fast)
+  File "C:\Users\John\Downloads\renpy-6.99.8-sdk\renpy\ast.py", line 500, in eval_who
+    raise Exception("Sayer '%s' is not defined." % who.encode("utf-8"))
+Exception: Sayer 'Pinkie' is not defined.
+
+Windows-7-6.1.7601-SP1
+Ren'Py 6.99.8.959
+ANightAtPonyville 0.1 - Sweet Night
